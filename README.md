@@ -1,5 +1,4 @@
 # Simple Network Monitoring Tool
-***
 
 SNMT is a simple network monit ... hmm
 
