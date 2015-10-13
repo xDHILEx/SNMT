@@ -29,7 +29,7 @@ $ python SNMT.py
 $ python mail.py
 ```
 
-###### Version: 1.0.0
+###### Version: TODO: Figure out Semver
 ###### License: ???
 
 
