@@ -1,4 +1,4 @@
-import smtplib, ConfigParser
+import smtplib, ConfigParser, SNMT
 
 config = ConfigParser.ConfigParser()
 config.read('config.ini')
@@ -16,24 +16,28 @@ TEXT = config.get('Receiver', 'text')
 SERVER = config.get('Carrier', 'server')
 PORT = config.getint('Carrier', 'port')
 
-# Create connection to carrier service
-server = smtplib.SMTP(SERVER, PORT)
-server.ehlo()
-server.starttls()
-server.login(SENDER, PASSWORD)
+if len(SNMT.TEXT) > 0:
+    # Create connection to carrier service
+    server = smtplib.SMTP(SERVER, PORT)
+    server.ehlo()
+    server.starttls()
+    server.login(SENDER, PASSWORD)
 
-BODY = '\r\n'.join([
-    'To: %s' % TO,
-    'From: %s' % SENDER,
-    'Subject: %s' % SUBJECT,
-    '',
-    TEXT
-    ])
+    BODY = '\r\n'.join([
+        'To: %s' % TO,
+        'From: %s' % SENDER,
+        'Subject: %s' % SUBJECT,
+        '',
+        SNMT.TEXT
+        #TEXT
+        ])
 
-try:
-    server.sendmail(SENDER, [TO], BODY)
-    print 'email sent'
-except:
-    print 'error sending email'
+    try:
+        server.sendmail(SENDER, [TO], BODY)
+        print 'email sent'
+    except:
+        print 'error sending email'
 
-server.quit()
+    server.quit()
+else:
+    exit()
