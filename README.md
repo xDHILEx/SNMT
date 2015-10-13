@@ -22,7 +22,7 @@ $ git clone https://github.com/xDHILEx/SNMT.git SNMT
 ##### Use:
 ```sh
 $ cd SNMT
-$ vim config.ini (I'm kidding, use whatever you want)
+$ vim config.ini (I\'m kidding, use whatever you want)
     - Make the magic happen -
 $ python SNMT.py
     - or -
