@@ -18,7 +18,7 @@ tail = Popen(('tail', '-n', '1'), stdin=mtr.stdout, stdout=PIPE)
 awk = check_output(('awk', '{ print $2, $5, $6}'), stdin=tail.stdout)
 # l is a list of awk split on each word
 l = awk.split()
-# WORST, AVG, RET_IP just pop strings in order, as SNMT is only concerned with the DEST_IP
+# WORST, AVG, RET_IP grabbed by index
 WORST = float(l[2])
 AVG = float(l[1])
 RET_IP = l[0]
