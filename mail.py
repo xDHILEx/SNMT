@@ -16,7 +16,7 @@ TEXT = config.get('Receiver', 'text')
 SERVER = config.get('Carrier', 'server')
 PORT = config.getint('Carrier', 'port')
 
-if len(SNMT.TEXT) > 0:
+if not SNMT.TEXT:
     # Create connection to carrier service
     server = smtplib.SMTP(SERVER, PORT)
     server.ehlo()
