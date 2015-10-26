@@ -29,9 +29,5 @@ $ python SNMT.py
 $ python mail.py
 ```
 
-###### Version: TODO: Figure out Semver
-###### License: ???
-
-
 
    [zip]: <https://github.com/xDHILEx/SNMT/archive/master.zip>
